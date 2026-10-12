@@ -15,12 +15,20 @@
       "Read(./.dev.vars)",
       "Read(./.dev.vars*)",
       "Bash(cat .env*)",
-      "Bash(cat .dev.vars*)"
+      "Bash(cat .dev.vars*)",
+      "mcp__playwright__browser_run_code_unsafe",
+      "mcp__playwright__browser_file_upload",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_drop",
+      "mcp__playwright__browser_set_storage_state"
     ],
     "ask": [
       "Bash(wrangler deploy *)",
       "Bash(npx wrangler deploy *)",
       "Bash(npm run deploy *)"
+    ],
+    "allow": [
+      "mcp__playwright__*"
     ]
   },
   "hooks": {

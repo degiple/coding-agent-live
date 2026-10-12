@@ -3,3 +3,9 @@ sandbox_mode = "workspace-write"
 
 [mcp_servers.cloudflare-docs]
 url = "https://docs.mcp.cloudflare.com/mcp"
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@0.0.83", "--isolated"]
+startup_timeout_sec = 60
+disabled_tools = ["browser_run_code_unsafe", "browser_file_upload", "browser_evaluate", "browser_drop", "browser_set_storage_state"]

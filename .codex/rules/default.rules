@@ -1,0 +1,36 @@
+prefix_rule(
+    pattern = ["git", "push", "origin", ["main", "HEAD:main", "main:main", ":main"]],
+    decision = "forbidden",
+    justification = "main への push は禁止です。ブランチを切って push します。",
+    match = ["git push origin main", "git push origin HEAD:main"],
+    not_match = ["git push origin feature/x"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", ["-u", "--set-upstream"], "origin", ["main", "HEAD:main"]],
+    decision = "forbidden",
+    justification = "main への push は禁止です。ブランチを切って push します。",
+    match = ["git push -u origin main"],
+    not_match = ["git push -u origin feature/x"],
+)
+
+prefix_rule(
+    pattern = ["wrangler", "deploy"],
+    decision = "prompt",
+    justification = "公開の前に、ローカルでの確認を済ませたか確かめます。",
+    match = ["wrangler deploy"],
+)
+
+prefix_rule(
+    pattern = ["npx", "wrangler", "deploy"],
+    decision = "prompt",
+    justification = "公開の前に、ローカルでの確認を済ませたか確かめます。",
+    match = ["npx wrangler deploy"],
+)
+
+prefix_rule(
+    pattern = ["npm", "run", "deploy"],
+    decision = "prompt",
+    justification = "公開の前に、ローカルでの確認を済ませたか確かめます。",
+    match = ["npm run deploy"],
+)

@@ -1,0 +1,13 @@
+# 秘密（実トークンは .env か .dev.vars にだけ置く）
+.env*
+!.env.example
+.dev.vars*
+
+# 依存と生成物
+node_modules/
+.wrangler/
+
+# 各ツールの個人設定
+.claude/settings.local.json
+.claude/worktrees/
+.DS_Store

@@ -6,6 +6,7 @@
 # 依存と生成物
 node_modules/
 .wrangler/
+.playwright-mcp/
 
 # 各ツールの個人設定
 .claude/settings.local.json

@@ -14,6 +14,7 @@
 - 画面の更新は、2秒ごとにサーバーへ状態を取得する方式（ポーリング）です。
 - ログインはありません。連続送信を防ぐため、送信の間隔を制限します。
 - 起動と公開は、npm で入れる wrangler で行います。ローカルは `npx wrangler dev`、公開は `npx wrangler deploy` です。
+- Cloudflare の操作は wrangler で行い、cf（Cloudflare CLI）は使いません。`wrangler.jsonc` がまだ無い段階でも同じです。
 
 ## 守ること
 
